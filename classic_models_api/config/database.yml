@@ -10,8 +10,7 @@ development:
   <<: *default
   database: classic_models
   username: classic_models
-  password:  env:
-    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  password:  env: <%= ENV.fetch("DB_PASSWORD") %>
   host: localhost
   port: 5432
 test:
