@@ -8,6 +8,9 @@ on:
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: classic_models_api
 
     steps:
       - name: Checkout code
@@ -16,6 +19,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: classic_models_api
           bundler-cache: true
 
       - name: Scan for common Rails security vulnerabilities using static analysis
@@ -26,6 +30,9 @@ jobs:
       
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: classic_models_api
     env:
       RUBOCOP_CACHE_ROOT: tmp/rubocop
     steps:
@@ -35,6 +42,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: classic_models_api
           bundler-cache: true
 
       - name: Prepare RuboCop cache
@@ -52,6 +60,9 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: classic_models_api
 
     services:
       postgres:
@@ -79,6 +90,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: classic_models_api
           bundler-cache: true
 
       - name: Run tests
