@@ -11,8 +11,7 @@ development:
   database: classic_models
   username: classic_models
   password:  env:
-  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-
+    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
   host: localhost
   port: 5432
 test:
