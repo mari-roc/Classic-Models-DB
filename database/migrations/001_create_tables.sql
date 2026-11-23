@@ -1,13 +1,3 @@
-DROP TABLE IF EXISTS 
-    order_details,
-    payments,
-    orders,
-    products,
-    customers,
-    product_lines,
-    employees,
-    offices
-CASCADE; 
 CREATE TABLE offices (
   office_code varchar(10) NOT NULL PRIMARY KEY,
   city varchar(50) NOT NULL,
