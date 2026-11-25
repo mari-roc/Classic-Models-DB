@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration[8.1]
       t.decimal :quantity_in_stock, precision: 10, scale: 0
       t.decimal :buy_price, precision: 10, scale: 2
       t.decimal :msrp, precision: 10, scale: 2
-      add_foreign_key :products, :product_lines, column: :product_line, primary_key: :product_line
     end
+    add_foreign_key :products, :product_lines, column: :product_line, primary_key: :product_line
   end
 end

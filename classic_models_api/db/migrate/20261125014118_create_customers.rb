@@ -14,7 +14,7 @@ class CreateCustomers < ActiveRecord::Migration[8.1]
       t.string :country, null: false, limit: 50
       t.integer :sales_rep_employee_number
       t.decimal :credit_limit, precision: 10, scale: 2
-      add_foreign_key :customers, :employees, column: :sales_rep_employee_number, primary_key: :employee_number
     end
+    add_foreign_key :customers, :employees, column: :sales_rep_employee_number, primary_key: :employee_number
   end
 end

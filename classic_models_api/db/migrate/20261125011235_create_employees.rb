@@ -9,8 +9,8 @@ class CreateEmployees < ActiveRecord::Migration[8.1]
       t.string :job_title, null: false, limit: 50
       t.integer :reports_to, limit: 11
       t.string :office_code, null: false, limit: 10
-      add_foreign_key :employees, :offices, column: :office_code, primary_key: :office_code
-      add_foreign_key :employees, :employees, column: :reports_to, primary_key: :employee_number
     end
+    add_foreign_key :employees, :offices, column: :office_code, primary_key: :office_code
+    add_foreign_key :employees, :employees, column: :reports_to, primary_key: :employee_number
   end
 end
