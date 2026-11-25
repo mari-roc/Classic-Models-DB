@@ -9,6 +9,6 @@ class CreateOrderDetails < ActiveRecord::Migration[8.1]
     end
     add_foreign_key :order_details, :orders, column: :order_number, primary_key: :order_number
     add_foreign_key :order_details, :products, column: :product_code, primary_key: :product_code
-    check_constraint :order_details, 'order_line_number >= 0', name: 'order_line_number_non_negative'
+    add_check_constraint :order_details, 'order_line_number >= 0', name: 'order_line_number_non_negative'
   end
 end
