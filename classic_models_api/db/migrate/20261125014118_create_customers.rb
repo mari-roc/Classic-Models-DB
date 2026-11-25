@@ -16,6 +16,5 @@ class CreateCustomers < ActiveRecord::Migration[8.1]
       t.decimal :credit_limit, precision: 10, scale: 2
       add_foreign_key :customers, :employees, column: :sales_rep_employee_number, primary_key: :employee_number
     end
-    drop_table :customers
   end
 end

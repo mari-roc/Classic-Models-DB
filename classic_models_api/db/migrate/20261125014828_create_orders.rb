@@ -10,6 +10,5 @@ class CreateOrders < ActiveRecord::Migration[8.1]
       t.integer :customer_number, null: false
       add_foreign_key :orders, :customers, column: :customer_number, primary_key: :customer_number
     end
-    drop_table :orders
   end
 end

@@ -12,6 +12,5 @@ class CreateEmployees < ActiveRecord::Migration[8.1]
       add_foreign_key :employees, :offices, column: :office_code, primary_key: :office_code
       add_foreign_key :employees, :employees, column: :reports_to, primary_key: :employee_number
     end
-    drop_table :employees
   end
 end

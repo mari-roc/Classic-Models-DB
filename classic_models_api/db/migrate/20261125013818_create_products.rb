@@ -12,6 +12,5 @@ class CreateProducts < ActiveRecord::Migration[8.1]
       t.decimal :msrp, precision: 10, scale: 2
       add_foreign_key :products, :product_lines, column: :product_line, primary_key: :product_line
     end
-    drop_table :products
   end
 end

@@ -6,6 +6,5 @@ class CreateProductLines < ActiveRecord::Migration[8.1]
       t.string :html_description, limit: 4000
       t.binary :image, limit: 4000
     end
-    drop_table :product_lines
   end
 end

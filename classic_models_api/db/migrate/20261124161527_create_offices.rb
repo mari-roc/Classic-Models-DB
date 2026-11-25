@@ -11,7 +11,6 @@ class CreateOffices < ActiveRecord::Migration[8.1]
       t.string :postal_code, null: false, limit: 15
       t.string :territory, null: false, limit: 10
     end
-    drop_table :offices
   end
 end
 
