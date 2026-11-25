@@ -16,4 +16,8 @@ development:
 test:
   <<: *default
   database: classic_models_api_test
+  username: classic_models
+  password: <%= ENV.fetch("DB_PASSWORD") %>
+  host: localhost
+  port: 5432
 
