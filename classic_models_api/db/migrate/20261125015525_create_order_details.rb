@@ -1,6 +1,6 @@
 class CreateOrderDetails < ActiveRecord::Migration[8.1]
   def change
-    create_table :order_details, id: false, primary_key: [ :order_number, :product_code ] do |t|
+    create_table :order_details, primary_key: [ :order_number, :product_code ] do |t|
       t.integer :order_number, null: false
       t.string :product_code, null: false, limit: 15
       t.integer :quantity_ordered, null: false

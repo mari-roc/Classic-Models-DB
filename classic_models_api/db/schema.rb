@@ -50,7 +50,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_25_015525) do
     t.string "territory", limit: 10, null: false
   end
 
-  create_table "order_details", id: false, force: :cascade do |t|
+  create_table "order_details", primary_key: ["order_number", "product_code"], force: :cascade do |t|
     t.integer "order_number", null: false
     t.string "product_code", limit: 15, null: false
     t.integer "quantity_ordered", null: false
@@ -68,7 +68,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_25_015525) do
     t.integer "customer_number", null: false
   end
 
-  create_table "payments", id: false, force: :cascade do |t|
+  create_table "payments", primary_key: ["customer_number", "check_number"], force: :cascade do |t|
     t.integer "customer_number", null: false
     t.string "check_number", limit: 50, null: false
     t.date "payment_date", null: false

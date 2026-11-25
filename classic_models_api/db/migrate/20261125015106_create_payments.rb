@@ -1,6 +1,6 @@
 class CreatePayments < ActiveRecord::Migration[8.1]
   def change
-    create_table :payments, id: false, primary_key: [ :customer_number, :check_number ] do |t|
+    create_table :payments, primary_key: [ :customer_number, :check_number ] do |t|
       t.integer :customer_number, null: false
       t.string :check_number, null: false, limit: 50
       t.date :payment_date, null: false
