@@ -7,10 +7,11 @@ class CreateProducts < ActiveRecord::Migration[8.1]
       t.string :product_scale, null: false, limit: 10
       t.string :product_vendor, null: false, limit: 50
       t.text :product_description, null: false
-      t.decimal :quantity_in_stock, precision: 10, scale: 0
-      t.decimal :buy_price, precision: 10, scale: 2
-      t.decimal :msrp, precision: 10, scale: 2
+      t.smallint :quantity_in_stock
+      t.decimal :buy_price, precision: 10, scale: 2, null: false
+      t.decimal :msrp, precision: 10, scale: 2, null: false
     end
     add_foreign_key :products, :product_lines, column: :product_line, primary_key: :product_line
+    check_constraint :products, 'quantity_in_stock >= 0', name: 'quantity_in_stock_non_negative'
   end
 end
