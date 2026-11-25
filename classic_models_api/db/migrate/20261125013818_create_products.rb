@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[8.1]
       t.string :product_scale, null: false, limit: 10
       t.string :product_vendor, null: false, limit: 50
       t.text :product_description, null: false
-      t.smallint :quantity_in_stock, null: false
+      t.integer :quantity_in_stock, null: false, limit: 2
       t.decimal :buy_price, precision: 10, scale: 2, null: false
       t.decimal :msrp, precision: 10, scale: 2, null: false
     end
