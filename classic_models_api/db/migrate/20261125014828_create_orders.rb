@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration[8.1]
       t.date :required_date, null: false
       t.date :shipped_date
       t.string :status, null: false, limit: 15
-      t.string :comments
+      t.text :comments
       t.integer :customer_number, null: false
     end
     add_foreign_key :orders, :customers, column: :customer_number, primary_key: :customer_number
