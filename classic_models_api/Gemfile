@@ -51,5 +51,3 @@ group :development, :test do
   # Use dotenv to load environment variables from .env files
   gem "dotenv-rails"
 end
-
-
